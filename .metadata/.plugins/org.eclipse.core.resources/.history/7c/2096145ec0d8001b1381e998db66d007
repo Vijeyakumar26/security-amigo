@@ -12,9 +12,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests()		//for every request username and password are sent 
-			.antMatchers("/","/index","/css/*")	//allows the urls for all users without authentication
-			.permitAll()
+		http.authorizeRequests()//for every request username and password are sent 
 			.anyRequest()
 			.authenticated()
 			.and()
